@@ -1,0 +1,141 @@
+/* =============================================
+   TIP CARD COMPONENT STYLES
+   ============================================= */
+
+.card {
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    padding: var(--space-4);
+    border-left: 3px solid var(--priority-color, var(--accent));
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+    margin-bottom: var(--space-3);
+}
+
+.icon {
+    font-size: 1.5rem;
+}
+
+.meta {
+    flex: 1;
+    display: flex;
+    gap: var(--space-2);
+}
+
+.category {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.priority {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    padding: var(--space-1) var(--space-2);
+    border-radius: var(--radius-sm);
+}
+
+.priority[data-priority="high"] {
+    background: rgba(239, 68, 68, 0.1);
+    color: var(--red);
+}
+
+.priority[data-priority="medium"] {
+    background: rgba(245, 158, 11, 0.1);
+    color: var(--yellow);
+}
+
+.priority[data-priority="low"] {
+    background: var(--bg-tertiary);
+    color: var(--text-secondary);
+}
+
+.dismissBtn {
+    padding: var(--space-2);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    opacity: 0.5;
+    transition: all var(--transition-fast);
+}
+
+.dismissBtn:hover {
+    opacity: 1;
+    color: var(--red);
+}
+
+.title {
+    margin: 0 0 var(--space-2);
+    font-size: 1rem;
+    color: var(--text-primary);
+}
+
+.content {
+    margin: 0;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    line-height: 1.6;
+}
+
+/* Compact version */
+.compact {
+    display: flex;
+    align-items: center;
+    gap: var(--space-3);
+    padding: var(--space-3);
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-md);
+}
+
+.compactIcon {
+    font-size: 1.25rem;
+}
+
+.compactContent {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.compactTitle {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.compactCategory {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    text-transform: capitalize;
+}
+
+.compactDismiss {
+    padding: var(--space-1);
+    background: transparent;
+    border: none;
+    color: var(--text-secondary);
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity var(--transition-fast);
+}
+
+.compact:hover .compactDismiss {
+    opacity: 0.5;
+}
+
+.compactDismiss:hover {
+    opacity: 1;
+    color: var(--red);
+}

@@ -1,0 +1,56 @@
+/* =============================================
+   DASHBOARD LAYOUT STYLES
+   ============================================= */
+
+.appContainer {
+    display: flex;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+.mainContent {
+    flex: 1;
+    margin-left: var(--sidebar-width);
+    display: flex;
+    flex-direction: column;
+    transition: margin-left 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    min-width: 0;
+}
+
+.mainContent.collapsed {
+    margin-left: 72px;
+}
+
+.pageContent {
+    flex: 1;
+    padding: var(--space-5);
+    overflow-x: hidden;
+    min-width: 0;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(10px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .mainContent {
+        margin-left: 0;
+    }
+
+    .mainContent.collapsed {
+        margin-left: 0;
+    }
+
+    .pageContent {
+        padding: var(--space-4);
+    }
+}

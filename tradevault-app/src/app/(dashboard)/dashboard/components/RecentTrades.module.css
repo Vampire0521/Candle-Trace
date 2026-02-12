@@ -1,0 +1,169 @@
+/* =============================================
+   RECENT TRADES COMPONENT STYLES
+   ============================================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+.empty {
+    text-align: center;
+    padding: var(--space-10) var(--space-4);
+    color: var(--text-secondary);
+}
+
+.emptyIcon {
+    font-size: 3rem;
+    display: block;
+    margin-bottom: var(--space-4);
+}
+
+.addBtn {
+    display: inline-block;
+    margin-top: var(--space-4);
+    padding: var(--space-3) var(--space-6);
+    background: var(--gradient-accent);
+    color: white;
+    border-radius: var(--radius-lg);
+    font-weight: 600;
+    transition: all var(--transition-normal);
+}
+
+.addBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-glow);
+}
+
+.tableWrapper {
+    overflow-x: auto;
+}
+
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th {
+    text-align: left;
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    border-bottom: 1px solid var(--border);
+}
+
+.table td {
+    padding: var(--space-4);
+    border-bottom: 1px solid var(--border);
+    font-size: 0.875rem;
+}
+
+.row {
+    transition: background var(--transition-fast);
+}
+
+.row:hover {
+    background: rgba(139, 92, 246, 0.05);
+}
+
+.ticker {
+    font-weight: 600;
+}
+
+.tickerBadge {
+    color: var(--text-primary);
+}
+
+.typeBadge,
+.sideBadge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.75rem;
+    font-weight: 500;
+    text-transform: capitalize;
+}
+
+.typeBadge {
+    background: rgba(139, 92, 246, 0.15);
+    color: var(--accent);
+}
+
+.typeBadge.crypto {
+    background: rgba(234, 179, 8, 0.15);
+    color: var(--yellow);
+}
+
+.typeBadge.forex {
+    background: rgba(59, 130, 246, 0.15);
+    color: var(--blue);
+}
+
+.typeBadge.options {
+    background: rgba(236, 72, 153, 0.15);
+    color: var(--pink);
+}
+
+.typeBadge.futures {
+    background: rgba(6, 182, 212, 0.15);
+    color: var(--cyan);
+}
+
+.sideBadge.long {
+    background: rgba(34, 197, 94, 0.15);
+    color: var(--green);
+}
+
+.sideBadge.short {
+    background: rgba(239, 68, 68, 0.15);
+    color: var(--red);
+}
+
+.price,
+.qty {
+    font-family: var(--font-mono);
+    font-size: 0.8125rem;
+}
+
+.pnl {
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.positive {
+    color: var(--green);
+}
+
+.negative {
+    color: var(--red);
+}
+
+.date {
+    color: var(--text-secondary);
+    font-size: 0.8125rem;
+}
+
+.viewAll {
+    display: block;
+    text-align: center;
+    padding: var(--space-4);
+    margin-top: var(--space-4);
+    color: var(--accent);
+    font-weight: 500;
+    transition: color var(--transition-fast);
+}
+
+.viewAll:hover {
+    color: var(--accent-light);
+}
+
+@media (max-width: 768px) {
+
+    .table th,
+    .table td {
+        padding: var(--space-2) var(--space-3);
+    }
+}

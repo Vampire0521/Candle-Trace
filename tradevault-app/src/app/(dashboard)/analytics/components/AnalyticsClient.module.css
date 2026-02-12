@@ -1,0 +1,267 @@
+/* =============================================
+   ANALYTICS CLIENT STYLES
+   ============================================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+/* Tabs */
+.tabs {
+    display: flex;
+    gap: var(--space-2);
+    background: var(--bg-secondary);
+    padding: var(--space-2);
+    border-radius: var(--radius-xl);
+    border: 1px solid var(--border);
+}
+
+.tab {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    border-radius: var(--radius-lg);
+    border: none;
+    background: transparent;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.tab:hover {
+    color: var(--text-primary);
+    background: var(--bg-tertiary);
+}
+
+.tab.active {
+    background: var(--gradient-accent);
+    color: white;
+}
+
+/* Metrics Grid */
+.metricsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: var(--space-4);
+}
+
+.metricCard {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    text-align: center;
+}
+
+.metricLabel {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-bottom: var(--space-2);
+}
+
+.metricValue {
+    font-size: 1.5rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+.positive {
+    color: var(--green);
+}
+
+.negative {
+    color: var(--red);
+}
+
+/* Chart Card */
+.chartCard,
+.tableCard {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+}
+
+.chartTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: var(--space-4);
+}
+
+.chart {
+    width: 100%;
+    height: 250px;
+}
+
+.noData {
+    color: var(--text-muted);
+    text-align: center;
+    padding: var(--space-6);
+}
+
+/* Table */
+.table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table th,
+.table td {
+    padding: var(--space-3) var(--space-4);
+    text-align: left;
+    border-bottom: 1px solid var(--border);
+}
+
+.table th {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: var(--text-muted);
+    text-transform: uppercase;
+}
+
+.table td {
+    font-size: 0.875rem;
+}
+
+/* Distribution */
+.distributionGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: var(--space-4);
+}
+
+.distributionCard {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.distributionType {
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: var(--accent);
+}
+
+.distributionCount {
+    font-size: 0.8125rem;
+    color: var(--text-secondary);
+}
+
+.distributionPnL {
+    font-size: 1.25rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+/* Monthly Grid */
+.monthlyGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: var(--space-3);
+}
+
+.monthCard {
+    background: var(--bg-tertiary);
+    border-radius: var(--radius-lg);
+    padding: var(--space-3);
+    text-align: center;
+}
+
+.monthLabel {
+    display: block;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+    margin-bottom: var(--space-1);
+}
+
+.monthValue {
+    font-size: 1rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+/* Drawdown */
+.drawdownSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.drawdownStats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: var(--space-5);
+}
+
+.drawdownCard {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-2xl);
+    padding: var(--space-6);
+    text-align: center;
+}
+
+.drawdownLabel {
+    display: block;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    margin-bottom: var(--space-3);
+}
+
+.drawdownValue {
+    display: block;
+    font-size: 2rem;
+    font-weight: 700;
+    font-family: var(--font-mono);
+    margin-bottom: var(--space-2);
+}
+
+.drawdownHint {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.drawdownTip {
+    background: rgba(139, 92, 246, 0.1);
+    border: 1px solid var(--accent);
+    border-radius: var(--radius-xl);
+    padding: var(--space-5);
+}
+
+.drawdownTip strong {
+    color: var(--accent);
+    display: block;
+    margin-bottom: var(--space-3);
+}
+
+.drawdownTip ul {
+    margin: 0;
+    padding-left: var(--space-5);
+    color: var(--text-secondary);
+}
+
+.drawdownTip li {
+    margin-bottom: var(--space-2);
+}
+
+@media (max-width: 640px) {
+    .tabs {
+        flex-direction: column;
+    }
+
+    .metricsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

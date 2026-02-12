@@ -1,0 +1,110 @@
+/* =============================================
+   TRADE FILTERS BAR STYLES
+   ============================================= */
+
+.filtersBar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-3);
+    align-items: center;
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+}
+
+.searchWrapper {
+    position: relative;
+    flex: 1;
+    min-width: 200px;
+}
+
+.searchIcon {
+    position: absolute;
+    left: 12px;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 0.875rem;
+}
+
+.searchInput {
+    width: 100%;
+    padding: 0.625rem 0.75rem 0.625rem 2.25rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-family: inherit;
+    transition: all var(--transition-fast);
+}
+
+.searchInput:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--accent-glow);
+}
+
+.searchInput::placeholder {
+    color: var(--text-muted);
+}
+
+.select,
+.dateInput {
+    padding: 0.625rem 0.75rem;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    background: var(--bg-tertiary);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-family: inherit;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.select {
+    min-width: 130px;
+}
+
+.dateInput {
+    width: 140px;
+}
+
+.select:focus,
+.dateInput:focus {
+    outline: none;
+    border-color: var(--accent);
+}
+
+.clearBtn {
+    padding: 0.625rem 1rem;
+    border-radius: var(--radius-lg);
+    border: none;
+    background: var(--red);
+    color: white;
+    font-size: 0.8125rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    font-family: inherit;
+}
+
+.clearBtn:hover {
+    background: var(--red-light);
+}
+
+@media (max-width: 768px) {
+    .filtersBar {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .searchWrapper {
+        min-width: 100%;
+    }
+
+    .select,
+    .dateInput {
+        width: 100%;
+    }
+}

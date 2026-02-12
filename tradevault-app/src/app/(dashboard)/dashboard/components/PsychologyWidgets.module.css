@@ -1,0 +1,13 @@
+/* =============================================
+   CANDLE TRACE - PSYCHOLOGY WIDGETS STYLES
+   ============================================= */
+
+.container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 1rem;
+}
+
+.widget {
+    min-width: 0;
+}

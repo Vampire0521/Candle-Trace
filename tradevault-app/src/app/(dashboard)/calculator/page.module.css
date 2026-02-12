@@ -1,0 +1,241 @@
+/* =============================================
+   RISK CALCULATOR PAGE STYLES
+   All 3 calculators visible with responsive layout
+   ============================================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+    width: 100%;
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-bottom: var(--space-8);
+}
+
+.pageHeader {
+    margin-bottom: var(--space-2);
+}
+
+.pageTitle {
+    font-size: 1.5rem;
+    font-weight: 700;
+    margin: 0 0 0.25rem;
+}
+
+.pageDesc {
+    color: var(--text-secondary);
+    margin: 0;
+    font-size: 0.875rem;
+}
+
+/* Calculator Grid - Responsive layout */
+.calculatorsGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: var(--space-4);
+    align-items: stretch;
+    width: 100%;
+}
+
+/* On very wide screens, limit to 3 columns max */
+@media (min-width: 1400px) {
+    .calculatorsGrid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+/* On medium screens, 2 columns */
+@media (max-width: 900px) {
+    .calculatorsGrid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* On small screens, 1 column */
+@media (max-width: 600px) {
+    .calculatorsGrid {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Calculator Card */
+.calculatorCard {
+    background: var(--gradient-card);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-xl);
+    padding: var(--space-4);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+    min-width: 0;
+}
+
+.cardHeader {
+    display: flex;
+    align-items: flex-start;
+    gap: var(--space-3);
+}
+
+.cardIcon {
+    font-size: 1.75rem;
+    line-height: 1;
+}
+
+.cardTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    margin: 0 0 0.125rem;
+}
+
+.cardDesc {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Form */
+.form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+}
+
+.field {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.field label {
+    font-size: 0.6875rem;
+    font-weight: 600;
+    color: var(--text-secondary);
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+}
+
+.fieldRow {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-2);
+}
+
+.input {
+    padding: 0.625rem 0.75rem;
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    font-family: inherit;
+    transition: all 0.15s ease;
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 2px rgba(139, 92, 246, 0.15);
+}
+
+.calculateBtn {
+    padding: 0.75rem 1rem;
+    background: var(--gradient-accent);
+    border: none;
+    border-radius: var(--radius-md);
+    color: white;
+    font-weight: 600;
+    font-size: 0.8125rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    margin-top: var(--space-1);
+}
+
+.calculateBtn:hover {
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-glow);
+}
+
+/* Results */
+.results {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-2);
+    padding-top: var(--space-3);
+    border-top: 1px solid var(--border);
+}
+
+.resultItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.resultLabel {
+    font-size: 0.75rem;
+    color: var(--text-secondary);
+}
+
+.resultValue {
+    font-size: 0.875rem;
+    font-weight: 600;
+    font-family: var(--font-mono);
+}
+
+.resultValue.highlight {
+    color: var(--accent);
+    font-size: 1rem;
+}
+
+.resultValue.positive {
+    color: var(--green);
+}
+
+.resultValue.negative {
+    color: var(--red);
+}
+
+/* Risk/Reward Visual */
+.rrVisual {
+    margin-top: var(--space-1);
+}
+
+.rrBar {
+    display: flex;
+    height: 24px;
+    border-radius: var(--radius-sm);
+    overflow: hidden;
+    font-size: 0.5625rem;
+    font-weight: 600;
+    letter-spacing: 0.05em;
+}
+
+.rrRisk {
+    background: var(--red);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-width: 36px;
+}
+
+.rrReward {
+    background: var(--green);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    min-width: 36px;
+}
+
+/* Kelly Note */
+.kellyNote {
+    font-size: 0.6875rem;
+    color: var(--text-secondary);
+    background: var(--bg-tertiary);
+    padding: var(--space-2);
+    border-radius: var(--radius-sm);
+    line-height: 1.5;
+}

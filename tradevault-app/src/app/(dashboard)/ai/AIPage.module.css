@@ -1,0 +1,136 @@
+/* =============================================
+   AI PAGE STYLES
+   ============================================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-6);
+}
+
+.header {
+    background: linear-gradient(135deg, #1F1F1F 0%, #2A2A2A 50%, #1A1A1A 100%);
+    padding: var(--space-6);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border-light);
+}
+
+.headerContent h1 {
+    margin: 0 0 var(--space-2);
+    font-size: 1.75rem;
+    color: #FFFFFF !important;
+    background: none !important;
+    -webkit-text-fill-color: #FFFFFF !important;
+    display: flex;
+    align-items: center;
+    gap: var(--space-2);
+}
+
+.headerContent p {
+    margin: 0;
+    opacity: 0.9;
+    color: #E0E0E0 !important;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: var(--space-6);
+}
+
+.chatSection {
+    grid-row: span 2;
+}
+
+.patternsSection,
+.tipsSection {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.sectionHeader {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.sectionHeader h2 {
+    margin: 0;
+    font-size: 1.25rem;
+    color: var(--text-primary);
+}
+
+.convSelect {
+    padding: var(--space-2) var(--space-3);
+    background: var(--bg-tertiary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+}
+
+.actionBtn {
+    padding: var(--space-2) var(--space-4);
+    background: var(--bg-secondary);
+    border: 1px solid var(--border);
+    border-radius: var(--radius-md);
+    color: var(--text-primary);
+    font-size: 0.875rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+}
+
+.actionBtn:hover:not(:disabled) {
+    background: var(--border-light);
+    border-color: var(--border-light);
+    color: var(--text-primary);
+}
+
+.actionBtn:disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+}
+
+.patternCards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-4);
+}
+
+.tipCards {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-3);
+}
+
+.emptyTips {
+    text-align: center;
+    padding: var(--space-6);
+    background: var(--bg-secondary);
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--border);
+    color: var(--text-secondary);
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+
+    .chatSection {
+        grid-row: auto;
+        order: 3;
+    }
+
+    .patternsSection {
+        order: 1;
+    }
+
+    .tipsSection {
+        order: 2;
+    }
+}

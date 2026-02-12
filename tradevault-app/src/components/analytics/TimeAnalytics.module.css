@@ -1,0 +1,234 @@
+/* =============================================
+   CANDLE TRACE - TIME ANALYTICS STYLES
+   ============================================= */
+
+.container {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+}
+
+.emptyState {
+    background: var(--glass-bg, rgba(22, 22, 38, 0.6));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
+    border-radius: 12px;
+    padding: 3rem;
+    text-align: center;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+/* Summary Cards */
+.summaryGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+}
+
+.summaryCard {
+    background: var(--glass-bg, rgba(22, 22, 38, 0.6));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+}
+
+.summaryLabel {
+    font-size: 0.75rem;
+    font-weight: 600;
+    color: rgba(255, 255, 255, 0.5);
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+}
+
+.summaryValue {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+}
+
+.summaryPnl {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.summaryPnl.positive {
+    color: #22c55e;
+}
+
+.summaryPnl.negative {
+    color: #ef4444;
+}
+
+/* Chart Sections */
+.chartSection {
+    background: var(--glass-bg, rgba(22, 22, 38, 0.6));
+    border: 1px solid var(--border-color, rgba(255, 255, 255, 0.15));
+    border-radius: 12px;
+    padding: 1.5rem;
+}
+
+.chartTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-primary, #fff);
+    margin: 0 0 1rem 0;
+}
+
+.chartNote {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.4);
+    margin: 1rem 0 0 0;
+    font-style: italic;
+}
+
+/* Hourly Chart */
+.hourlyChart {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 150px;
+    padding: 0.5rem 0;
+}
+
+.hourBar {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100%;
+    position: relative;
+}
+
+.barContainer {
+    flex: 1;
+    width: 100%;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+}
+
+.bar {
+    width: 80%;
+    border-radius: 2px 2px 0 0;
+    transition: height 0.3s ease;
+    min-height: 2px;
+}
+
+.bar.positive {
+    background: linear-gradient(180deg, #22c55e 0%, #16a34a 100%);
+}
+
+.bar.negative {
+    background: linear-gradient(180deg, #ef4444 0%, #dc2626 100%);
+}
+
+.hourLabel {
+    font-size: 0.625rem;
+    color: rgba(255, 255, 255, 0.5);
+    margin-top: 4px;
+}
+
+.tooltip {
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(0, 0, 0, 0.9);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    padding: 0.5rem;
+    font-size: 0.75rem;
+    white-space: nowrap;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.2s ease;
+    z-index: 10;
+}
+
+.hourBar:hover .tooltip {
+    opacity: 1;
+}
+
+/* Day of Week Chart */
+.dayChart {
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+}
+
+.dayItem {
+    display: grid;
+    grid-template-columns: 50px 1fr 100px 120px;
+    gap: 1rem;
+    align-items: center;
+}
+
+.dayName {
+    font-size: 0.875rem;
+    font-weight: 500;
+    color: var(--text-primary, #fff);
+}
+
+.dayBarContainer {
+    height: 24px;
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.dayBar {
+    height: 100%;
+    border-radius: 4px;
+    transition: width 0.3s ease;
+}
+
+.dayBar.positive {
+    background: linear-gradient(90deg, #22c55e 0%, #16a34a 100%);
+}
+
+.dayBar.negative {
+    background: linear-gradient(90deg, #ef4444 0%, #dc2626 100%);
+}
+
+.dayPnl {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-align: right;
+}
+
+.dayPnl.positive {
+    color: #22c55e;
+}
+
+.dayPnl.negative {
+    color: #ef4444;
+}
+
+.dayStats {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: right;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .dayItem {
+        grid-template-columns: 40px 1fr 80px;
+    }
+
+    .dayStats {
+        display: none;
+    }
+
+    .summaryGrid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .summaryGrid {
+        grid-template-columns: 1fr;
+    }
+}
